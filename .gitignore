@@ -1,0 +1,7 @@
+__pycache__
+
+# IntelliJ files
+.idea/
+
+# Python virtualenv
+venv/
