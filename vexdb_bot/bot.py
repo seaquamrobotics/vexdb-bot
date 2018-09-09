@@ -14,7 +14,13 @@ def team():
     team_id = find_team_id(req.text)
     if team_id:
         team_info = get_team(team_id)
-        resp = BotResponse("Team %s is %s" % (team_id, team_info.team_name))
+
+        message = "*%s (Team %s)*\n" \
+                  "_%s (%s)_\n" \
+                  % (team_info.team_name, team_info.id,
+                     team_info.organisation, team_info.get_location_str())
+
+        resp = BotResponse(message)
     else:
         resp = BotResponse("Sorry, I couldn't find a valid team ID in your message :(")
 

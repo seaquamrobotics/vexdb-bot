@@ -21,6 +21,12 @@ class Team:
         self.grade         = str(result["grade"])
         self.is_registered = bool(result["is_registered"])
 
+    def get_location_str(self):
+        if not (self.city or self.region or self.country):
+            return "Unknown"
+
+        return ", ".join([self.city, self.region, self.country])
+
 
 def get_team(team_name):
     """Gets team information from the VexDB API (/get_teams)."""
