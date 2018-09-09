@@ -1,0 +1,2 @@
+class CouldNotFindError(Exception):
+    pass
